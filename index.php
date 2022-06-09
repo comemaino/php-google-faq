@@ -104,7 +104,11 @@ error_reporting(E_ALL);
     <?php 
       foreach($faqs as $faq => $qa) {
         foreach($qa as $key => $value) {
-            echo "<p class=$key>" . $value . "</p>";
+          if($key === "question") {
+            echo "<h3>" . $value . "</h3>";
+          } else {
+            echo "<p>" . $value . "</p>";
+          }
           };
         }  
       ?>
@@ -135,6 +139,7 @@ body {
 
 header {
   border-bottom: 1px solid #ccc;
+  margin-bottom: 5rem;
 }
 header img {
   height: 2rem;
@@ -162,9 +167,9 @@ ul li {
   width: 80%;
   margin: 0 auto;
 }
-.question {
-  font-size: large;
-  font-weight: 800;
+
+p {
+margin-bottom: 3rem;
 }
 
 ol li ol li{
