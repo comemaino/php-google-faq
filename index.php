@@ -84,14 +84,46 @@ error_reporting(E_ALL);
     ],
   ]
   ?>
+  <header>
+    <div class="top-header">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2560px-Google_2015_logo.svg.png" alt="">
+      <h1>Privacy e termini</h1>
+    </div>
+    <nav>
+      <ul>
+        <li>Introduzione</li>
+        <li>Norme sulla privacy</li>
+        <li>Termini di servizio</li>
+        <li>Tecnologie</li>
+        <li>Domande frequenti</li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="container">
+    <?php 
+      foreach($faqs as $faq => $qa) {
+        foreach($qa as $key => $value) {
+            echo "<p class=$key>" . $value . "</p>";
+          };
+        }  
+      ?>
+    </div>
+  </main>
+  <footer>
+    <div class="container">
+    <ul>
+      <li>Google</li>
+      <li>Tutto su Google</li>
+      <li>Privacy</li>
+      <li>Termini</li>
+    </ul>
 
-  <?php 
-  foreach($faqs as $faq => $qa) {
-    foreach($qa as $key => $value) {
-        echo "<p class=$key>" . $value . "</p>";
-      };
-    }  
-  ?>
+    <select name="" id="">
+      <option value="">Italiano</option>
+    </select>
+    </div>
+  </footer>
 </body>
 </html>
 
@@ -99,6 +131,36 @@ error_reporting(E_ALL);
 
 body {
   font-family: Helvetica, sans-serif;
+}
+
+header {
+  border-bottom: 1px solid #ccc;
+}
+header img {
+  height: 2rem;
+
+}
+
+header h1 {
+
+  font-size: 1.5rem;
+  display: inline-block;
+}
+
+ul {
+  width: 85%;
+  display: inline-block;
+  list-style: none;
+}
+
+ul li {
+  font-size: .8rem;
+  margin-right: 2rem;
+  display: inline-block;
+}
+.container {
+  width: 80%;
+  margin: 0 auto;
 }
 .question {
   font-size: large;
@@ -109,6 +171,14 @@ ol li ol li{
   list-style: lower-alpha;
 }
 
+footer {
+  background-color: #ddd;
+  padding: 1rem 0;
+}
 
+select {
+  
+  display: inline-block;
+}
  
 </style>
